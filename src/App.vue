@@ -11,9 +11,16 @@
    <br>
 
    <span>Código A: </span><input type="text"><span v-informacao:destacado.doisClicksMouse.sairAutomaticamente="'Você encontrará o código B na parte traseira do equipamento, abaixo da tampa de proteção'"> i</span>
+
+   <hr>
+
+   <h1 v-colorir-fundo-texto="'red'">Diretiva customizada registrada localmente (no componente) </h1>
 </template>
 
 <script>
+
+import colirirFundoTexto from '@/directives/colorirFundoTexto'
+//podemos omitir a extensão
 
 export default {
    name: 'App',
@@ -23,8 +30,11 @@ export default {
          tamanhoFonte: '200%', 
          totalCaracteres: 15
       },
+   }),
 
-   })
+   directives: {
+      colorirFundoTexto: colirirFundoTexto
+   }
 }
 </script>
 
