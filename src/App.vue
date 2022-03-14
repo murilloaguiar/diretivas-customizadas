@@ -1,26 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <p>Sem diretiva</p>
+   <p v-texto="{cor: 'red', tamanhoFonte: '200%', totalCaracteres: 15}">Minha primeira diretiva customizada</p>
+   <p v-texto="configuracaoTexto">Teste</p>
+   <div v-posicao:absolute="75" v-texto="{cor: 'green', totalCaracteres: 50}">Olá, eu sou um binding de argumento e valor</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+   name: 'App',
+   data: ()=>({
+      configuracaoTexto: {
+         cor: 'blue', 
+         tamanhoFonte: '200%', 
+         totalCaracteres: 15
+      },
+
+   })
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
